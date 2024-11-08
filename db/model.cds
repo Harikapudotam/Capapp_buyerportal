@@ -4,9 +4,9 @@ using { cuid, managed, temporal, Currency } from '@sap/cds/common';
 entity Status {
     key ID : UUID ; // Adding a key for the Status entity
     saved  : localized String(40) @mandatory; // General name field for status
-    Ordered : String(40);
-    InApproval : String(40);
-    Rejected : String(40);
+    Ordered : localized String(40);
+    InApproval : localized String(40);
+    Rejected : localized String(40);
 }
 
 entity RequestHeader : managed{
@@ -22,7 +22,7 @@ entity RequestItem : managed {
     key ItemNo     : UUID @mandatory; 
     
     RequestHeader  : Association to RequestHeader @title: 'Request Header'; // Association back to RequestHeader
-    ItemDescr      : String(40) @mandatory;
+    ItemDescr      : localized String(40) @mandatory;
     MaterialNum    : Association to Material;//String(40) @mandatory;
     Quantity       : Decimal(10,2) @mandatory; // Consider using Decimal for quantity
     UnitPrice      : Decimal(10,2) @mandatory; // Use Decimal for currency representation
