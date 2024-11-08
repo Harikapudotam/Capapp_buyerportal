@@ -3,7 +3,7 @@ using {OP_API_PRODUCT_SRV_0001 as prod_api} from '../srv/external/OP_API_PRODUCT
 using { cuid, managed, temporal, Currency } from '@sap/cds/common';
 entity Status {
     key ID : UUID ; // Adding a key for the Status entity
-    saved  : String(40) @mandatory; // General name field for status
+    saved  : localized String(40) @mandatory; // General name field for status
     Ordered : String(40);
     InApproval : String(40);
     Rejected : String(40);
