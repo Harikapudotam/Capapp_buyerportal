@@ -1,4 +1,3 @@
-
 using MyService as service from '../../srv/service';
 annotate service.Request_Header @(
     UI.SelectionFields:[
